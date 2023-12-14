@@ -7,10 +7,10 @@ try
     service
         .GetRequiredService<MessageHandler>()
         .Start();
+    await host.RunAsync();
 }
 catch (Exception exc)
 {
     Console.WriteLine(exc.Message);
 }
 
-await host.RunAsync();

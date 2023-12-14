@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageRelay", "MessageRelay\MessageRelay.csproj", "{209E46DB-BE52-49E0-B733-A15EE0251DF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.Tests", "Gateway\tests\Gateway.Tests\Gateway.Tests.csproj", "{E1A3C424-74B9-489A-93E5-2A123085DEAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.Api", "Gateway\src\Gateway.Api\Gateway.Api.csproj", "{B3DBDFF8-3FB1-40E3-AB5F-8439604FB3FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{209E46DB-BE52-49E0-B733-A15EE0251DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{209E46DB-BE52-49E0-B733-A15EE0251DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{209E46DB-BE52-49E0-B733-A15EE0251DF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1A3C424-74B9-489A-93E5-2A123085DEAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1A3C424-74B9-489A-93E5-2A123085DEAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1A3C424-74B9-489A-93E5-2A123085DEAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1A3C424-74B9-489A-93E5-2A123085DEAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3DBDFF8-3FB1-40E3-AB5F-8439604FB3FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3DBDFF8-3FB1-40E3-AB5F-8439604FB3FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3DBDFF8-3FB1-40E3-AB5F-8439604FB3FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3DBDFF8-3FB1-40E3-AB5F-8439604FB3FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

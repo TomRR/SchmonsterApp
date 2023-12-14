@@ -1,4 +1,16 @@
-﻿FROM mcr.microsoft.com/dotnet/runtime:7.0 AS base
+﻿# Use build arguments to pass sensitive data
+ARG TELEGRAM_BOT_TOKEN
+ARG TELEGRAM_BOT_CHAT_ID
+ARG GATEWAY_URI
+ARG GATEWAY_REQUEST_URI
+
+# Set environment variables with the build arguments
+ENV TELEGRAM_BOT_TOKEN=$TELEGRAM_BOT_TOKEN
+ENV TELEGRAM_BOT_CHAT_ID=$TELEGRAM_BOT_CHAT_ID
+ENV GATEWAY_URI=$GATEWAY_URI
+ENV GATEWAY_REQUEST_URI=$GATEWAY_REQUEST_URI
+
+FROM mcr.microsoft.com/dotnet/runtime:7.0 AS base
 WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
@@ -15,18 +27,6 @@ RUN dotnet publish "MessageRelay.csproj" -c Release -o /app/publish /p:UseAppHos
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-
-# Use build arguments to pass sensitive data
-ARG TELEGRAM_BOT_TOKEN
-ARG TELEGRAM_BOT_CHAT_ID
-ARG GATEWAY_URI
-ARG GATEWAY_REQUEST_URI
-
-# Set environment variables with the build arguments
-ENV TELEGRAM_BOT_TOKEN=$TELEGRAM_BOT_TOKEN
-ENV TELEGRAM_BOT_CHAT_ID=$TELEGRAM_BOT_CHAT_ID
-ENV GATEWAY_URI=$GATEWAY_URI
-ENV GATEWAY_REQUEST_URI=$GATEWAY_REQUEST_URI
 
 # copy appsettings.json
 COPY ["MessageRelay/appsettings.json", "/app/"]

@@ -5,11 +5,11 @@ internal sealed class GatewaySetting
     public const string ConfigurationSection = "GatewaySetting";
     
     [Required]
-    [UrlAttribute]
+    // [UrlAttribute]
     public string Uri { get; init; } = default!;
     
     [Required]
-    [UrlAttribute]
+    // [UrlAttribute]
     public string RequestUri { get; init; } = default!;
     
     public string ApiKey { get; init; } = default!;

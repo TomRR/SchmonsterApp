@@ -52,7 +52,10 @@ internal sealed class MessageHandler
         catch (Exception ex)
         {
             await client.SendTextMessageAsync(_chatId, MessageConstants.ExceptionSendingMessage, cancellationToken: token);
+            return;
         }
+
+
     }
     
     private async Task ErrorHandler(ITelegramBotClient client, Exception exception, CancellationToken token)

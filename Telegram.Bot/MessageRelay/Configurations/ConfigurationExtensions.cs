@@ -33,13 +33,20 @@ internal static class Configurations
     private static IHostBuilder AppSettingsConfiguration(this IHostBuilder host)
     {
         return host
+            // .ConfigureHostConfiguration(configHost => configHost.AddEnvironmentVariables())
             .ConfigureAppConfiguration((context, config) =>
             {
                 var env = context.HostingEnvironment;
                 config.SetBasePath(env.ContentRootPath)
-                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                    // .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
-                    .AddEnvironmentVariables();
+                    .AddEnvironmentVariables()
+                    .AddJsonFileConfig(env);
             });
+    }
+
+    private static IConfigurationBuilder AddJsonFileConfig(this IConfigurationBuilder builder, IHostEnvironment env)
+    {
+        return env.IsDevelopment()
+            ? builder.AddJsonFile("appsettings.Development.json", optional: false, reloadOnChange: true)
+            : builder.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
     }
 }
