@@ -1,0 +1,14 @@
+﻿global using CommunityToolkit.Maui;
+global using AcceleratorApp.UI.Models;
+global using AcceleratorApp.UI.Services;
+global using CommunityToolkit.Mvvm.ComponentModel;
+global using CommunityToolkit.Mvvm.Input;
+global using AcceleratorApp.UI.ViewModels;
+global using AcceleratorApp.UI.Views;
+global using System.Collections.ObjectModel;
+global using System.ComponentModel;
+global using System.Diagnostics;
+global using System.Globalization;
+global using System.Runtime.CompilerServices;
+global using System.Text.Json;
+global using System.Threading.Tasks;
